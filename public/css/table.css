@@ -31,8 +31,34 @@ button {
     font-size: 16px;
     margin: 50px 0px 10px 0px;
     border-radius: 8px;
+    cursor: pointer;
+}
+button:hover{
+    cursor: pointer;
 }
 
+a.edit{
+    background-color: #6c757d;
+    margin: 0px 25px 0px 0px;
+    padding: 0px 3px 0px 5px;
+    border-radius: 3px;
+    border: 1px solid #000000;
+}
+i.fa-pencil-square-o{
+    color: white;
+    margin-top: 10px;
+}
+
+a.trash{
+    background-color: red;
+    padding: 0px 3px 0px 3px;
+    border-radius: 3px;
+    border: 1px solid #000000;
+}
+
+i.fa-trash-o{
+    color: white;
+}
 
 /* Default table */
 table {
@@ -66,6 +92,11 @@ table th, table td {
     position:relative;
     vertical-align:middle;
 }
+
+table thead th.last-column, table td.last-column{
+    width: 10%;
+}
+
 caption {font-size:1.111em; font-weight:300; padding:10px 0;}
 
 @media (max-width:1024px) {

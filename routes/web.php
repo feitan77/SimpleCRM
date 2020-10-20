@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\CompanyController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/companies', function () {
-    return view('companies', ['companies' => App\Models\Company::all()]);
-});
+Route::get('/companies', [CompanyController::class, 'index']);
+Route::get('/companies/create', [CompanyController::class, 'create']);
+Route::post('/companies', [CompanyController::class, 'store']);
+Route::get('/companies/{company}/edit', [CompanyController::class, 'edit']);
+Route::put('/companies/{company}', [CompanyController::class, 'update']);
+Route::get('/companies/delete/{id}', 'CompanyController@destroy')->name('companies.delete');
+
