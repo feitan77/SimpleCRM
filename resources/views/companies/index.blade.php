@@ -30,7 +30,13 @@
         <tr>
             <td data-label="name">{{ $company->name }}</td>
             <td data-label="email">{{ $company->email }}</td>
-            <td data-label="logo">{{ $company->logo }}</td>
+            <td data-label="logo">
+                @if($company->logo===null)
+                    <img src="{{ asset('storage/no-logo.png') }}" alt="logo"/>
+                @else
+                    <img src="{{ asset('storage/' . $company->logo) }}" alt="logo" title="logo"/>
+                @endif
+            </td>
             <td data-label="website">{{ $company->website }}</td>
             <td class="last-column">
                     <a class="edit" href="/companies/{{ $company->id }}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>

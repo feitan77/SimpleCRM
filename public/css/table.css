@@ -72,6 +72,10 @@ table {
     width:100%;
     max-width:100%;
 }
+img{
+    width: 32px;
+    height: 32px;
+}
 table thead tr {border-bottom:3px solid #0085a6; color:#000;}
 table tfoot tr {border-top:3px solid #0085a6;}
 table thead th, table tfoot th {

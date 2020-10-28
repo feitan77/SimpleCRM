@@ -16,13 +16,23 @@ class CompanyController extends Controller
         return view('companies.create');
     }
 
-    public function store(){
+    public function store(Request $request){
         $company=new Company();
         $company->name=request('name');
         $company->email=request('email');
         $company->website=request('website');
-        $company->logo=request('logo');
 
+        if ($request->has('logo')) {
+            $file = $request->file('logo');
+            $extension = $file->extension();
+            $filename  = 'logo-' . time() . '.' . $extension;
+
+            $path=$file->storeAs(
+                'public',
+                     $filename,
+            );
+            $company->logo=$filename;
+        }
         $company->save();
         return redirect('/companies');
     }
@@ -32,12 +42,24 @@ class CompanyController extends Controller
         return view('companies.edit', ['company'=>$company]);
     }
 
-    public function update($id){
+    public function update($id, Request $request){
         $company=Company::find($id);
         $company->name=request('name');
         $company->email=request('email');
         $company->website=request('website');
-        $company->logo=request('logo');
+
+        if ($request->has('logo')) {
+            $file = $request->file('logo');
+            $extension = $file->extension();
+            $filename  = 'logo-' . time() . '.' . $extension;
+
+            $path=$file->storeAs(
+                'public',
+                $filename,
+            );
+            $company->logo=$filename;
+        }
+
         $company->save();
         return redirect('/companies');
 

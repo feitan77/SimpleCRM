@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1>Create New Company</h1>
-<form method="POST" action="/companies">
+<form method="POST" action="/companies" enctype="multipart/form-data">
     @csrf
     <label for="name">Name</label>
     <input type="text" name="name" id="name" />
@@ -19,9 +19,11 @@
     <input type="text" name="email" id="email"/>
     <label for="website">Website</label>
     <input type="text" name="website" id="website"/>
-    <label for="logo">Logo</label>
-    <input type="text" name="logo" id="logo"/>
-    <input type="submit" class="button" />
+    <label for="logo">Logo (100x100 min)</label>
+    <div class="logo">
+        <input type="file" name="logo" id="logo"/>
+    </div>
+    <input type="submit" class="button"/>
 </form>
 </body>
 </html>
