@@ -84,3 +84,9 @@ input#logo{
     border-top-color: #ffffff;
     background: #ffffff;
 }
+
+p.alert{
+    color: red;
+    margin-top: 0px;
+    font-size: 20px;
+}

@@ -17,6 +17,13 @@ class CompanyController extends Controller
     }
 
     public function store(Request $request){
+        request()->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'website'=>'required|url',
+            'logo'=>'image|mimes:jpeg,png,jpg,gif|dimensions:min_width=100,min_height=100'
+        ]);
+
         $company=new Company();
         $company->name=request('name');
         $company->email=request('email');
@@ -26,11 +33,7 @@ class CompanyController extends Controller
             $file = $request->file('logo');
             $extension = $file->extension();
             $filename  = 'logo-' . time() . '.' . $extension;
-
-            $path=$file->storeAs(
-                'public',
-                     $filename,
-            );
+            $file->storeAs('public', $filename,);
             $company->logo=$filename;
         }
         $company->save();
@@ -43,6 +46,12 @@ class CompanyController extends Controller
     }
 
     public function update($id, Request $request){
+        request()->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'website'=>'required|url',
+            'logo'=>'image|mimes:jpeg,png,jpg,gif|dimensions:min_width=100,min_height=100'
+        ]);
         $company=Company::find($id);
         $company->name=request('name');
         $company->email=request('email');
@@ -52,11 +61,7 @@ class CompanyController extends Controller
             $file = $request->file('logo');
             $extension = $file->extension();
             $filename  = 'logo-' . time() . '.' . $extension;
-
-            $path=$file->storeAs(
-                'public',
-                $filename,
-            );
+            $file->storeAs('public', $filename);
             $company->logo=$filename;
         }
 
