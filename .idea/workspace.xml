@@ -21,10 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="370dde3f-c315-4792-9e72-0381d2563536" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/form.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/companies/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/companies/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/companies/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/companies/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/companies/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/companies/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +198,9 @@
       <workItem from="1603662796993" duration="9841000" />
       <workItem from="1603749423162" duration="4900000" />
       <workItem from="1603845561162" duration="7603000" />
-      <workItem from="1603920624624" duration="7395000" />
+      <workItem from="1603920624624" duration="7676000" />
+      <workItem from="1604008928486" duration="1695000" />
+      <workItem from="1604094716691" duration="1337000" />
     </task>
     <servers />
   </component>
@@ -219,10 +220,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603845582579">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1604008956595">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603845582579" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604008956595" />
     <state x="1028" y="152" key="NewPhpClassDialog" timestamp="1602982038620">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

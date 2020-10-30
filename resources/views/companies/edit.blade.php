@@ -1,15 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Companies</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+@extends('layout')
+@section('assets')
+    <title>Edit the company</title>
     <link href="/css/form.css" rel="stylesheet" type="text/css" media="all" />
-</head>
-<body>
+@endsection
+
+@section('content')
 <h1>Edit {{ $company->name }} company</h1>
 <form method="POST" action="/companies/{{ $company->id }}" enctype="multipart/form-data">
     @method('PUT')
@@ -41,5 +36,4 @@
     @enderror
     <input type="submit" class="button" value="Update"/>
 </form>
-</body>
-</html>
+@endsection

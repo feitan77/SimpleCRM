@@ -1,17 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Companies</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+@extends('layout')
+@section('assets')
+    <title>Create New Company</title>
     <link href="/css/form.css" rel="stylesheet" type="text/css" media="all" />
-</head>
-<body>
-<h1>Create New Company</h1>
-<form method="POST" action="/companies" enctype="multipart/form-data">
+@endsection
+    @section('content')
+    <h1>Create New Company</h1>
+    <form method="POST" action="/companies" enctype="multipart/form-data">
     @csrf
     <label for="name">Name</label>
     <input type="text" name="name" id="name" value="{{ old('name') }}"/>
@@ -36,6 +30,6 @@
         @enderror
     </div>
     <input type="submit" class="button"/>
-</form>
-</body>
-</html>
+    </form>
+
+    @endsection
