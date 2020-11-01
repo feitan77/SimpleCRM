@@ -55,9 +55,9 @@ class CompanyController extends Controller
         return redirect('/companies');
     }
 
-    public function destroy(Company $company)
+    public function destroy($id)
     {
-        Company::destroy($company);
+        Company::destroy($id);
 
         echo("success!");
         return redirect('/companies');
