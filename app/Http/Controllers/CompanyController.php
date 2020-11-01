@@ -28,53 +28,50 @@ class CompanyController extends Controller
         $company->name=request('name');
         $company->email=request('email');
         $company->website=request('website');
+        $this->handleLogo($request, $company);
 
-        if ($request->has('logo')) {
-            $file = $request->file('logo');
-            $extension = $file->extension();
-            $filename  = 'logo-' . time() . '.' . $extension;
-            $file->storeAs('public', $filename,);
-            $company->logo=$filename;
-        }
+
         $company->save();
         return redirect('/companies');
     }
 
-    public function edit($id){
-        $company=Company::find($id);
+    public function edit(Company $company){
         return view('companies.edit', ['company'=>$company]);
     }
 
-    public function update($id, Request $request){
+    public function update(Company $company, Request $request){
         request()->validate([
             'name'=>'required',
             'email'=>'required|email',
             'website'=>'required|url',
             'logo'=>'image|mimes:jpeg,png,jpg,gif|dimensions:min_width=100,min_height=100'
         ]);
-        $company=Company::find($id);
         $company->name=request('name');
         $company->email=request('email');
         $company->website=request('website');
-
-        if ($request->has('logo')) {
-            $file = $request->file('logo');
-            $extension = $file->extension();
-            $filename  = 'logo-' . time() . '.' . $extension;
-            $file->storeAs('public', $filename);
-            $company->logo=$filename;
-        }
+        $this->handleLogo($request, $company);
 
         $company->save();
         return redirect('/companies');
-
     }
 
-    public function destroy($id)
+    public function destroy(Company $company)
     {
-        Company::destroy($id);
+        Company::destroy($company);
 
         echo("success!");
         return redirect('/companies');
+    }
+
+
+    public function handleLogo(Request $request, Company $company): void
+    {
+        if ($request->has('logo')) {
+            $file = $request->file('logo');
+            $extension = $file->extension();
+            $filename = 'logo-' . time() . '.' . $extension;
+            $file->storeAs('public', $filename);
+            $company->logo = $filename;
+        }
     }
 }
