@@ -35,8 +35,7 @@
             <td data-label="website">{{ $company->website }}</td>
             <td class="last-column">
                     <a class="edit" href="{{ route('companies.edit', $company) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                    <a class="trash" href="{{ route('companies.delete',[$company->id]) }}" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-
+                    <a class="trash" href="{{ route('companies.delete',[$company->id]) }}" onclick="return confirm('Are you sure you want to delete this company?');"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
             </td>
         </tr>
     @endforeach

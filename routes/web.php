@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,11 @@ Route::get('/companies/{company}/edit', [CompanyController::class, 'edit'])->nam
 Route::put('/companies/{company}', [CompanyController::class, 'update']);
 Route::get('/companies/delete/{id}', [CompanyController::class, 'destroy'])->name('companies.delete');
 
+
+
+Route::get('/employees', [EmployeeController::class, 'index']);
+Route::get('/employees/create', [EmployeeController::class, 'create']);
+Route::post('/employees', [EmployeeController::class, 'store']);
+Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit'])->name('employees.edit');
+Route::put('/employees/{employee}', [EmployeeController::class, 'update']);
+Route::get('/employees/delete/{id}', [EmployeeController::class, 'destroy'])->name('employees.delete');
