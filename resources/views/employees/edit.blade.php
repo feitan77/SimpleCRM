@@ -59,18 +59,7 @@
         <p class="alert">{{ $errors->first('email') }}</p>
         @enderror
         <label for="phone">Phone</label>
-        <input  type="text" name="phone" id="phone" value="{{ $employee->phone }}" value="{{ old('phone') }}" style="
-            font-weight: bold;
-            display: block;
-            margin: 20px 0;
-            outline:0;
-            border:0;
-            padding: 10px 10px;
-            font-size: 13px;
-            width: 300px;
-            border-radius: 4px;
-            shadobox-w:inset 0 0 2px rgba(0,0,0,0.5);
-            "/>
+        <input  type="text" name="phone" id="phone" value="{{ $employee->phone }}" value="{{ old('phone') }}"/>
         @error('phone')
         <p class="alert">{{ $errors->first('phone') }}</p>
         @enderror

@@ -9,7 +9,7 @@ class CompanyController extends Controller
 {
     public function index(){
 
-        $companies=Company::all();
+        $companies=Company::with('employees')->get();
         return view('companies.index', ['companies' => $companies]);
     }
 

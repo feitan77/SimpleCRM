@@ -16,6 +16,7 @@
         <th>Email</th>
         <th>Logo</th>
         <th>Website</th>
+        <th>Employees</th>
         <th class="last-column" ></th>
 
     </tr>
@@ -33,6 +34,14 @@
                 @endif
             </td>
             <td data-label="website">{{ $company->website }}</td>
+            <td data-label="employees">
+                <button id="employees">
+                    <a href="/employees" class="employees">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span>{{ $company->employees->count() }}</span>
+                    </a>
+                </button>
+            </td>
             <td class="last-column">
                     <a class="edit" href="{{ route('companies.edit', $company) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                     <a class="trash" href="{{ route('companies.delete',[$company->id]) }}" onclick="return confirm('Are you sure you want to delete this company?');"><i class="fa fa-trash-o" aria-hidden="true"></i></a>

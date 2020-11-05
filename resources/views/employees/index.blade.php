@@ -8,6 +8,7 @@
 @section('content')
     <h2>Employees List</h2>
     <a href="/employees/create"><button>create new employee</button></a>
+    <a href="/companies"><button class="back">back to companies</button></a>
     <table class="table-responsive-full">
 
         <thead>
@@ -16,6 +17,7 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>phone</th>
+            <th>Company</th>
             <th class="last-column" ></th>
 
         </tr>
@@ -27,6 +29,7 @@
                 <td data-label="Last Name">{{ $employee->lastName }}</td>
                 <td data-label="Email">{{ $employee->email }}</td>
                 <td data-label="phone">{{ $employee->phone }}</td>
+                <td data-label="Company">{{ $employee->company->name }}</td>
                 <td class="last-column">
                     <a class="edit" href="{{ route('employees.edit', $employee) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                     <a class="trash" href="{{ route('employees.delete',[$employee->id]) }}" onclick="return confirm('Are you sure you want to delete this employee?');"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
